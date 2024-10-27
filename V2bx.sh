@@ -164,7 +164,7 @@ EOF
         # 添加开机自启动
         #rc-update add V2bX default
         pm2 startup
-        pm2 start ./V2bX --name V2bX -- server -c config.json
+        pm2 start /home/${w_WHOAMI}/V2bX/V2bX --name V2bX -- server -c /home/${w_WHOAMI}/V2bX/config.json
         pm2 save
 
 
@@ -566,11 +566,11 @@ EOF
 EOF
 echo -e "${green}V2bX 配置文件生成完成,正在重新启动服务,您原先的配置被被分到config.json.bak${plain}"	
 echo -e "${green}再次运行 bash BSDV2bX.sh${plain}"
-pm2 restart ./V2bX --name V2bX -- server -c config.json
+pm2 restart V2bX
 	;;
 *)
 echo -e "${red}不生成配置,退出脚本,再次运行 bash AlpineV2bX.sh${plain}"
-pm2 restart ./V2bX --name V2bX -- server -c config.json
+pm2 restart V2bX
 exit 0
 	esac
 ;;
@@ -984,12 +984,12 @@ EOF
 EOF
 echo -e "${green}V2bX 配置文件生成完成,正在重新启动服务,您原先的配置被被分到config.json.bak${plain}"	
 echo -e "${green}再次运行 bash BSDV2bX.sh${plain}"
-pm2 restart ./V2bX --name V2bX -- server -c config.json
+pm2 restart V2bX
 
 ;;
 4)
 
-pm2 restart ./V2bX --name V2bX -- server -c config.json
+pm2 restart V2bX
 
 ;;
 esac
