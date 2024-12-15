@@ -64,15 +64,15 @@ echo -e "${green}你选择了安装V2bX${plain}"
         #    echo -e "${red}检测架构失败，使用默认架构: ${arch}${plain}"
         #fi
         # 下载编译好的V2bX (2024/1/24更新为Xiao的修改版V2bX)
-        arch = "64"
+        arch=64
         if  [ $# == 0 ] ;then
-                last_version=$(curl -Ls "https://api.github.com/repos/wyx2685/V2bX/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+                last_version=$(curl -Ls "h -p "请输入数字: " choicettps://api.github.com/repos/wyx2685/V2bX/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
                 if [[ ! -n "$last_version" ]]; then
                     echo -e "${red}检测 V2bX 版本失败，默认采用2024年10月27日版本${plain}"
                     last_version=v0.0.17
                 fi
                 echo -e "${green}检测到 V2bX 最新版本：${last_version}，开始安装${plain}"
-                wget -q -N --no-check-certificate -O '/home/${w_WHOAMI}/V2bX/V2bX-freebsd.zip' https://github.com/wyx2685/V2bX/releases/download/${last_version}/V2bX-freebsd-${arch}.zip
+                wget -q -N --no-check-certificate -O /home/${w_WHOAMI}/V2bX/V2bX-freebsd.zip https://github.com/wyx2685/V2bX/releases/download/${last_version}/V2bX-freebsd-${arch}.zip
                 if [[ $? -ne 0 ]]; then
                     echo -e "${red}下载 V2bX 失败，请确保你的服务器能够下载 Github 的文件${plain}"
                     exit 1
